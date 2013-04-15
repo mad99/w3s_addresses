@@ -29,6 +29,6 @@
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_member']['addresses']    = array('Indirizzi', 'Gestisci gli indirizzi del membro con ID %s');
-
+$GLOBALS['TL_LANG']['tl_member']['addresses'][0]    = 'Indirizzi';
+$GLOBALS['TL_LANG']['tl_member']['addresses'][1]    = 'Gestisci gli indirizzi del membro con ID %s';
 ?>

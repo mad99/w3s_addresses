@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -22,7 +22,8 @@
  *
  * PHP version 5
  * @copyright  Liplex Webprogrammierung und -design Christian Kolb 2011 
- * @author     Christian Kolb 
+ * @author     Christian Kolb
+ * @author     Darko Selesi
  * @license    LGPL 
  */
 

@@ -29,12 +29,18 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_address']['street_2']         = array('Via 2', 'Inserisci un secondo indirizzo se necessario.');
-$GLOBALS['TL_LANG']['tl_address']['street_3']         = array('Via 3', 'Inserisci un terzo indirizzo se necessario.');
-$GLOBALS['TL_LANG']['tl_address']['secondEmail']      = array('Secondo indirizzo email', 'Prego inserisci un secondo indirizzo email.');
-$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'] = array('Indirizzo per i pagamenti', 'Clicca qui se questo è un indirizzo per i pagamenti.');
-$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'] = array('Indirizzo privato', 'Clicca qui se questo è un indirizzo privato.');
-$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'] = array('Indirizzo predefinito', 'Clicca qui se questo è l\'indirizzo predefinito del membro. Tutti i dati dell\'indirizzo verranno copiato nell\'indirizzo del membro in Contao.');
+$GLOBALS['TL_LANG']['tl_address']['street_2'][0]         = 'Via 2';
+$GLOBALS['TL_LANG']['tl_address']['street_2'][1]         = 'Inserisci un secondo indirizzo se necessario.';
+$GLOBALS['TL_LANG']['tl_address']['street_3'][0]         = 'Via 3';
+$GLOBALS['TL_LANG']['tl_address']['street_3'][1]         = 'Inserisci un terzo indirizzo se necessario.';
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][0]      = 'Secondo indirizzo email';
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][1]      = 'Prego inserisci un secondo indirizzo email.';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0] = 'Indirizzo per i pagamenti';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][1] = 'Clicca qui se questo è un indirizzo per i pagamenti.';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0] = 'Indirizzo privato';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][1] = 'Clicca qui se questo è un indirizzo privato.';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0] = 'Indirizzo predefinito';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][1] = 'Clicca qui se questo è l\'indirizzo predefinito del membro. Tutti i dati dell\'indirizzo verranno copiato nell\'indirizzo del membro in Contao.';
 
 /**
  * Legends
@@ -52,10 +58,15 @@ $GLOBALS['TL_LANG']['tl_address']['business_address']   = 'Indirizzo commerciale
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_address']['new']    = array('Nuovo indirizzo', 'Crea un nuovo indirizzo');
-$GLOBALS['TL_LANG']['tl_address']['show']   = array('Mostra dettagli indirizzo', 'Mostra i dettagli dell\'indirizzo ID %s');
-$GLOBALS['TL_LANG']['tl_address']['edit']   = array('Modifica indirizzo', 'Modifica indirizzo ID %s');
-$GLOBALS['TL_LANG']['tl_address']['copy']   = array('Copia indirizzo', 'Copia indirizzo ID %s');
-$GLOBALS['TL_LANG']['tl_address']['delete'] = array('Elimina indirizzo', 'Elimina indirizzo ID %s');
+$GLOBALS['TL_LANG']['tl_address']['new'][0]    = 'Nuovo indirizzo';
+$GLOBALS['TL_LANG']['tl_address']['new'][1]    = 'Crea un nuovo indirizzo';
 
+$GLOBALS['TL_LANG']['tl_address']['show'][0]   = 'Mostra dettagli indirizzo';
+$GLOBALS['TL_LANG']['tl_address']['show'][1]   = 'Mostra i dettagli dell\'indirizzo ID %s';
+$GLOBALS['TL_LANG']['tl_address']['edit'][0]   = 'Modifica indirizzo';
+$GLOBALS['TL_LANG']['tl_address']['edit'][1]   = 'Modifica indirizzo ID %s';
+$GLOBALS['TL_LANG']['tl_address']['copy'][0]   = 'Copia indirizzo';
+$GLOBALS['TL_LANG']['tl_address']['copy'][1]   = 'Copia indirizzo ID %s';
+$GLOBALS['TL_LANG']['tl_address']['delete'][0] = 'Elimina indirizzo';
+$GLOBALS['TL_LANG']['tl_address']['delete'][1] = 'Elimina indirizzo ID %s';
 ?>

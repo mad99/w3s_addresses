@@ -29,12 +29,19 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_address']['street_2']         = array('Street 2', 'Insert a second address line if necessary.');
-$GLOBALS['TL_LANG']['tl_address']['street_3']         = array('Street 3', 'Insert a third address line if necessary.');
-$GLOBALS['TL_LANG']['tl_address']['secondEmail']      = array('Second email address', 'Please insert a second email address.');
-$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'] = array('Billing address', 'Click here if this is a billing address.');
-$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'] = array('Private address', 'Click here if this is a private address.');
-$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'] = array('Default address', 'Click here if this is the default address of this member. All address data will be copied to the address of the contao member.');
+$GLOBALS['TL_LANG']['tl_address']['street_2'][0]         = 'Street 2';
+$GLOBALS['TL_LANG']['tl_address']['street_2'][1]         = 'Insert a second address line if necessary.';
+
+$GLOBALS['TL_LANG']['tl_address']['street_3'][0]         = 'Street 3';
+$GLOBALS['TL_LANG']['tl_address']['street_3'][1]         = 'Insert a third address line if necessary.';
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][0]      = 'Second email address';
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][1]      = 'Please insert a second email address.';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0] = 'Billing address';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][1] = 'Click here if this is a billing address.';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0] = 'Private address';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][1] = 'Click here if this is a private address.';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0] = 'Default address';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][1] = 'Click here if this is the default address of this member. All address data will be copied to the address of the contao member.';
 
 /**
  * Legends
@@ -52,10 +59,14 @@ $GLOBALS['TL_LANG']['tl_address']['business_address']   = 'Business address';
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_address']['new']    = array('New address', 'Create a new address');
-$GLOBALS['TL_LANG']['tl_address']['show']   = array('Show addressdetails', 'Show details of the address ID %s');
-$GLOBALS['TL_LANG']['tl_address']['edit']   = array('Edit address', 'Edit address ID %s');
-$GLOBALS['TL_LANG']['tl_address']['copy']   = array('Copy address', 'Copy address ID %s');
-$GLOBALS['TL_LANG']['tl_address']['delete'] = array('Delete address', 'Delete address ID %s');
-
+$GLOBALS['TL_LANG']['tl_address']['new'][0]    = 'New address';
+$GLOBALS['TL_LANG']['tl_address']['new'][1]    = 'Create a new address';
+$GLOBALS['TL_LANG']['tl_address']['show'][0]   = 'Show addressdetails';
+$GLOBALS['TL_LANG']['tl_address']['show'][1]   = 'Show details of the address ID %s';
+$GLOBALS['TL_LANG']['tl_address']['edit'][0]   = 'Edit address';
+$GLOBALS['TL_LANG']['tl_address']['edit'][1]   = 'Edit address ID %s';
+$GLOBALS['TL_LANG']['tl_address']['copy'][0]   = 'Copy address';
+$GLOBALS['TL_LANG']['tl_address']['copy'][1]   = 'Copy address ID %s';
+$GLOBALS['TL_LANG']['tl_address']['delete'][0] = 'Delete address';
+$GLOBALS['TL_LANG']['tl_address']['delete'][1] = 'Delete address ID %s';
 ?>

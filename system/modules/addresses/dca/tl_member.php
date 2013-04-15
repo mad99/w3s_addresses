@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_member']['list']['operations']['addresses'] = array
 (
 	'label'               => &$GLOBALS['TL_LANG']['tl_member']['addresses'],
 	'href'                => 'table=tl_address',
-	'icon'                => 'system/modules/addresses/icons/addressbook.png',
+	'icon'                => 'system/modules/addresses/assets/addressbook.png',
 );
 
 ?>

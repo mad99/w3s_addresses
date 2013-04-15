@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -22,7 +22,8 @@
  *
  * PHP version 5
  * @copyright  Liplex Webprogrammierung und -design Christian Kolb 2011 
- * @author     Christian Kolb 
+ * @author     Christian Kolb
+ * @author     Darko Selesi
  * @license    LGPL 
  */
 
@@ -39,7 +40,15 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 	(
 		'ptable'					  => 'tl_member',
 		'dataContainer'               => 'Table',
-		'onsubmit_callback'           => array(array('Address', 'updateDefaultAddress'))
+		'onsubmit_callback'           => array(array('Addresses\Address', 'updateDefaultAddress')),
+        'sql' => array
+        (
+            'keys' => array
+            (
+                'id' => 'primary',
+                'pid' => 'index'
+            )
+        )
 	),
 
 	// List
@@ -52,7 +61,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'disableGrouping'		  => true,
 			'flag'                    => 1,
 			'panelLayout'             => 'filter;search,limit',
-			'child_record_callback'   => array('Address','renderLabel')
+			'child_record_callback'   => array('Addresses\Address','renderLabel')
 		),
 		'global_operations' => array
 		(
@@ -103,7 +112,18 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 	// Fields
 	'fields' => array
 	(
-		'firstname' => array
+        'id' => array(
+            'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+        ),
+        'tstamp' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
+        'pid' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
+        'firstname' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_member']['firstname'],
 			'exclude'                 => true,
@@ -112,6 +132,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'flag'                    => 1,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'lastname' => array
 		(
@@ -122,6 +143,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'flag'                    => 1,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'gender' => array
 		(
@@ -130,7 +152,8 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'inputType'               => 'select',
 			'options'                 => array('male', 'female'),
 			'reference'               => &$GLOBALS['TL_LANG']['MSC'],
-			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50', 'mandatory'=>true)
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50', 'mandatory'=>true),
+            'sql'                     => "varchar(32) NOT NULL default ''"
 		),
 		'language' => array
 		(
@@ -139,7 +162,8 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'filter'                  => true,
 			'inputType'               => 'select',
 			'options'                 => $this->getLanguages(),
-			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50', 'mandatory'=>true)
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50', 'mandatory'=>true),
+            'sql'                     => "varchar(2) NOT NULL default ''"
 		),
 		'company' => array
 		(
@@ -150,6 +174,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'flag'                    => 1,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'street' => array
 		(
@@ -158,6 +183,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'street_2' => array
 		(
@@ -166,6 +192,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'street_3' => array
 		(
@@ -174,6 +201,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'postal' => array
 		(
@@ -182,6 +210,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>32, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(32) NOT NULL default ''"
 		),
 		'city' => array
 		(
@@ -191,6 +220,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'sorting'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'state' => array
 		(
@@ -200,6 +230,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'sorting'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'country' => array
 		(
@@ -211,6 +242,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'options'                 => array_keys($this->getCountries()),
 			'reference'               => $this->getCountries(),
 			'eval'                    => array('mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(32) NOT NULL default ''"
 		),
 		'email' => array
 		(
@@ -219,6 +251,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>64, 'rgxp'=>'email', 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'secondEmail' => array
 		(
@@ -227,6 +260,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'rgxp'=>'email', 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'phone' => array
 		(
@@ -235,6 +269,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'rgxp'=>'phone', 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 		'mobile' => array
 		(
@@ -243,6 +278,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'rgxp'=>'phone', 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 		'fax' => array
 		(
@@ -251,6 +287,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64, 'rgxp'=>'phone', 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 		'website' => array
 		(
@@ -259,6 +296,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
 		),
         'isBillingAddress' => array
 		(
@@ -266,7 +304,8 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
-			'eval'					  => array('tl_class'=>'w50')
+			'eval'					  => array('tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default ''"
 		),
         'isPrivateAddress' => array
 		(
@@ -274,7 +313,8 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
-			'eval'					  => array('tl_class'=>'w50')
+			'eval'					  => array('tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default ''"
 		),
 		'isDefaultAddress' => array
 		(
@@ -282,7 +322,8 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
-			'eval'					  => array('tl_class'=>'w50')
+			'eval'					  => array('tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default ''"
 		)
 	)
 );

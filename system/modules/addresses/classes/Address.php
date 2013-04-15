@@ -1,6 +1,4 @@
 <?php
-if (!defined('TL_ROOT'))
-	die('You cannot access this file directly!');
 
 /**
  * Contao Open Source CMS
@@ -25,10 +23,14 @@ if (!defined('TL_ROOT'))
  * PHP version 5
  * @copyright  Liplex Webprogrammierung und -design Christian Kolb 2011
  * @author     Christian Kolb <info@liplex.de>
+ * @author     Darko Selesi <hallo@w3scouts.com> (from 
  * @license    LGPL
  */
 
-class Address extends Controller
+namespace W3S\Addresses;
+
+
+class Address extends \Controller
 {
 	public function __construct()
 	{
@@ -38,15 +40,15 @@ class Address extends Controller
 
 	public function renderLabel($arrAddress)
 	{
-		$image = $arrAddress['isPrivateAddress'] ? '<img src="system/modules/addresses/icons/private.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0].'" /> ' : '<img src="system/modules/addresses/icons/business.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['business_address'].'" title="'.$GLOBALS['TL_LANG']['tl_address']['business_address'].'" /> ';
-		$image .= $arrAddress['isDefaultAddress'] ? '<img src="system/modules/addresses/icons/default_address.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0].'" /> ' : '';
-		$image .= $arrAddress['isBillingAddress'] ? '<img src="system/modules/addresses/icons/billing.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0].'" /> ' : '';
+		$image = $arrAddress['isPrivateAddress'] ? '<img src="system/modules/addresses/assets/private.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0].'" /> ' : '<img src="system/modules/addresses/assets/business.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['business_address'].'" title="'.$GLOBALS['TL_LANG']['tl_address']['business_address'].'" /> ';
+		$image .= $arrAddress['isDefaultAddress'] ? '<img src="system/modules/addresses/assets/default_address.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0].'" /> ' : '';
+		$image .= $arrAddress['isBillingAddress'] ? '<img src="system/modules/addresses/assets/billing.png" style="vertical-align:-3px;" alt="'.$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0].'" title="'.$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0].'" /> ' : '';
 		return $image.$arrAddress['firstname']." ".$arrAddress['lastname']." - ".$arrAddress['email']."";
 	}
 
 	public function updateDefaultAddress($dc)
 	{
-		if ($this->Input->post('isDefaultAddress'))
+		if (\Input::post('isDefaultAddress'))
 		{
 			// Get current address to get pid
 			$address = $this->Database->prepare("SELECT pid FROM tl_address WHERE id = ?")->execute($dc->id);
@@ -54,19 +56,19 @@ class Address extends Controller
 			// Reset default address in all addresses of the current member
 			$this->Database->prepare("UPDATE tl_address SET isDefaultAddress = '0' WHERE pid = '".$memberId."' AND NOT id = '".$dc->id."'")->execute();
 
-			$firstname = $this->Input->post('firstname');
-			$lastname = $this->Input->post('lastname');
-			$company = $this->Input->post('company');
-			$street = $this->Input->post('street');
-			$postal = $this->Input->post('postal');
-			$city = $this->Input->post('city');
-			$state = $this->Input->post('state');
-			$country = $this->Input->post('country');
-			$email = $this->Input->post('email');
-			$phone = $this->Input->post('phone');
-			$mobile = $this->Input->post('mobile');
-			$fax = $this->Input->post('fax');
-			$website = $this->Input->post('website');
+			$firstname  = \Input::post('firstname');
+			$lastname   = \Input::post('lastname');
+			$company    = \Input::post('company');
+			$street     = \Input::post('street');
+			$postal     = \Input::post('postal');
+			$city       = \Input::post('city');
+			$state      = \Input::post('state');
+			$country    = \Input::post('country');
+			$email      = \Input::post('email');
+			$phone      = \Input::post('phone');
+			$mobile     = \Input::post('mobile');
+			$fax        = \Input::post('fax');
+			$website    = \Input::post('website');
 
 			$this->Database->prepare("UPDATE tl_member
                                       SET firstname = '".$firstname."',

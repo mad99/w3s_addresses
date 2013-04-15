@@ -22,19 +22,27 @@
  *
  * PHP version 5
  * @copyright  Liplex Webprogrammierung und -design Christian Kolb 2011 
- * @author     Christian Kolb 
+ * @author     Christian Kolb
+ * @author     Darko Selesi
  * @license    LGPL 
  */
 
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_address']['street_2']         = array('Straße 2', 'Geben Sie eine zweite Zeile ein falls nötig.');
-$GLOBALS['TL_LANG']['tl_address']['street_3']         = array('Straße 3', 'Geben Sie eine dritte Zeile ein falls nötig.');
-$GLOBALS['TL_LANG']['tl_address']['secondEmail']      = array('Zweite E-Mail-Adresse', 'Bitte geben Sie eine zweite E-Mail-Adresse ein.');
-$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'] = array('Rechnungsadresse', 'Klicken Sie hier wenn dies die Rechnungsadresse ist.');
-$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'] = array('Privatadresse', 'Klicken Sie hier wenn dies eine Privatadresse ist.');
-$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'] = array('Standardadresse', 'Klicken Sie hier wenn dies die Standard-Adresse des Mitglieds ist. Alle Adressdaten werden auf die Adresse des Contao Mitglieds übernommen.');
+$GLOBALS['TL_LANG']['tl_address']['street_2'][0]         = 'Straße 2';
+$GLOBALS['TL_LANG']['tl_address']['street_2'][1]         = 'Geben Sie eine zweite Zeile ein falls nötig.';
+$GLOBALS['TL_LANG']['tl_address']['street_3'][0]         = 'Straße 3';
+$GLOBALS['TL_LANG']['tl_address']['street_3'][1]         = 'Geben Sie eine dritte Zeile ein falls nötig.';
+
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][0]      = 'Zweite E-Mail-Adresse';
+$GLOBALS['TL_LANG']['tl_address']['secondEmail'][1]      = 'Bitte geben Sie eine zweite E-Mail-Adresse ein.';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][0] = 'Rechnungsadresse';
+$GLOBALS['TL_LANG']['tl_address']['isBillingAddress'][1] = 'Klicken Sie hier wenn dies die Rechnungsadresse ist.';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][0] = 'Privatadresse';
+$GLOBALS['TL_LANG']['tl_address']['isPrivateAddress'][1] = 'Klicken Sie hier wenn dies eine Privatadresse ist.';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][0] = 'Standardadresse';
+$GLOBALS['TL_LANG']['tl_address']['isDefaultAddress'][1] = 'Klicken Sie hier wenn dies die Standard-Adresse des Mitglieds ist. Alle Adressdaten werden auf die Adresse des Contao Mitglieds übernommen.';
 
 /**
  * Legends
@@ -52,10 +60,15 @@ $GLOBALS['TL_LANG']['tl_address']['business_address'] = 'Geschäftsadresse';
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_address']['new']    = array('Neue Adresse', 'Eine neue Adresse anlegen');
-$GLOBALS['TL_LANG']['tl_address']['show']   = array('Adressdetails', 'Details der Adresse ID %s anzeigen');
-$GLOBALS['TL_LANG']['tl_address']['edit']   = array('Adresse bearbeiten', 'Adresse ID %s bearbeiten');
-$GLOBALS['TL_LANG']['tl_address']['copy']   = array('Adresse duplizieren', 'Adresse ID %s duplizieren');
-$GLOBALS['TL_LANG']['tl_address']['delete'] = array('Adresse löschen', 'Adresse ID %s löschen');
+$GLOBALS['TL_LANG']['tl_address']['new'][0]    = 'Neue Adresse';
+$GLOBALS['TL_LANG']['tl_address']['new'][1]    = 'Eine neue Adresse anlegen';
+$GLOBALS['TL_LANG']['tl_address']['show'][0]   = 'Adressdetails';
+$GLOBALS['TL_LANG']['tl_address']['show'][1]   = 'Details der Adresse ID %s anzeigen';
+$GLOBALS['TL_LANG']['tl_address']['edit'][0]   = 'Adresse bearbeiten';
+$GLOBALS['TL_LANG']['tl_address']['edit'][1]   = 'Adresse ID %s bearbeiten';
+$GLOBALS['TL_LANG']['tl_address']['copy'][0]   = 'Adresse duplizieren';
+$GLOBALS['TL_LANG']['tl_address']['copy'][1]   = 'Adresse ID %s duplizieren';
+$GLOBALS['TL_LANG']['tl_address']['delete'][0] = 'Adresse löschen';
+$GLOBALS['TL_LANG']['tl_address']['delete'][1] = 'Adresse ID %s löschen';
 
 ?>
