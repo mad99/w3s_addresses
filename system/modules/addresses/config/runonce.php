@@ -29,13 +29,13 @@ class AddressesRunonce extends \Controller
     {
         $currentVersion = sprintf('%s.%s', ADDRESSES_VERSION, ADDRESSES_BUILD);
 
-        if (!empty($GLOBALS['TL_CONFIG']['li_crm_version']))
+        if (!empty($GLOBALS['TL_CONFIG']['addresses_version']))
         {
-            $this->Config->update("\$GLOBALS['TL_CONFIG']['li_crm_version']", $currentVersion);
+            $this->Config->update("\$GLOBALS['TL_CONFIG']['addresses_version']", $currentVersion);
         }
         else
         {
-            $this->Config->add("\$GLOBALS['TL_CONFIG']['li_crm_version']", $currentVersion);
+            $this->Config->add("\$GLOBALS['TL_CONFIG']['addresses_version']", $currentVersion);
         }
 
     }

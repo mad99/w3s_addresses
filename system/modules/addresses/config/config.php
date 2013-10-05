@@ -27,6 +27,7 @@
  * @license    LGPL 
  */
 
-$GLOBALS['BE_MOD']['accounts']['member']['tables'][] = 'tl_address';
+@define('ADDRESSES_VERSION', '0.0');
+@define('ADDRESSES_BUILD', '6');
 
-?>
+$GLOBALS['BE_MOD']['accounts']['member']['tables'][] = 'tl_address';
