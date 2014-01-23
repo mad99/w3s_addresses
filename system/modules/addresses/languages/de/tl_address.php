@@ -71,4 +71,6 @@ $GLOBALS['TL_LANG']['tl_address']['copy'][1]   = 'Adresse ID %s duplizieren';
 $GLOBALS['TL_LANG']['tl_address']['delete'][0] = 'Adresse löschen';
 $GLOBALS['TL_LANG']['tl_address']['delete'][1] = 'Adresse ID %s löschen';
 
+$GLOBALS['TL_LANG']['tl_address']['isFriend']  = array("Freund", "Per »Du« ansprechen?");
+
 ?>
