@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'					  => '{personal_legend},firstname,lastname,gender,language;{address_legend},company,street,street_2,street_3,postal,city,state,country;{contact_legend},email,secondEmail,phone,mobile,fax,website;{additional_legend},isBillingAddress,isPrivateAddress,isDefaultAddress;',
+		'default'					  => '{personal_legend},firstname,lastname,gender,language;{address_legend},company,street,street_2,street_3,postal,city,state,country;{contact_legend},email,secondEmail,phone,mobile,fax,website;{additional_legend},isBillingAddress,isPrivateAddress,isDefaultAddress,isFriend;',
 	),
 
 	// Fields
@@ -324,6 +324,15 @@ $GLOBALS['TL_DCA']['tl_address'] = array
 			'inputType'               => 'checkbox',
 			'eval'					  => array('tl_class'=>'w50'),
             'sql'                     => "char(1) NOT NULL default ''"
+		),
+		'isFriend' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_address']['isFriend'],
+			'inputType'             => 'checkbox',
+			'exclude'               => true,
+			'filter'                => true,
+			'eval'                  => array('tl_class'=>'w50'),
+			'sql'                   => "char(1) NOT NULL default ''"
 		)
 	)
 );
